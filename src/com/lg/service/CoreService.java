@@ -92,7 +92,7 @@ public class CoreService {
 				String eventType = requestMap.get("Event");
 				// 订阅
 				if (eventType.equals(MessageUtil.EVENT_TYPE_SUBSCRIBE)) {
-					respContent = "关注欢迎词！";
+					respContent = "欢迎关注乐道大叔！\n\n将乐道会员与微信<a href=\"" + MyConfig.ipConfig + "member/bind.jsp\">绑定</a>，\n随时随地管理您的会员信息。\n还没有乐道会员？\n点击<a href=\"" + MyConfig.ipConfig + "member/register.jsp\">注册</a>\n";
 				}
 				// 取消订阅
 				else if (eventType.equals(MessageUtil.EVENT_TYPE_UNSUBSCRIBE)) {
@@ -104,10 +104,10 @@ public class CoreService {
 					String eventKey = requestMap.get("EventKey");
 
 					if (eventKey.equals("12")) {
-						respContent = "您的乐道会员还未与微信绑定，点击<a href=\"" + MyConfig.ipConfig + "member/bind.jsp\">绑定</a>";
+						//respContent = "调用扫一扫！";
+					}else if (eventKey.equals("13")) {
+						respContent = "马匹信息！";
 					} else if (eventKey.equals("14")) {
-						respContent = "调用扫一扫！";
-					} else if (eventKey.equals("15")) {
 						Article article1 = new Article();
 						article1.setTitle("个人信息");
 						article1.setDescription("您是XX会员\n总次数X次\n剩余X次");
@@ -150,8 +150,6 @@ public class CoreService {
 					} else if (eventKey.equals("22")) {
 						respContent = "冬令营招生！";
 					} else if (eventKey.equals("24")) {
-						respContent = "马匹信息！";
-					} else if (eventKey.equals("25")) {
 						respContent = "优惠办卡！";
 					} else if (eventKey.equals("31")) {
 						respContent = "感悟投稿！";

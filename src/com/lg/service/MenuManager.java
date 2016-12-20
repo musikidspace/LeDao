@@ -42,30 +42,26 @@ public class MenuManager {
 	 * @return
 	 */
 	private static Menu getMenu() {
+
 		ViewButton btn11 = new ViewButton();
-		btn11.setName("注册会员");
+		btn11.setName("骑马预约");
 		btn11.setType("view");
-		btn11.setUrl(MyConfig.ipConfig + "member/register.jsp");
+		btn11.setUrl(MyConfig.ipConfig + "member/order.jsp");
 
 		CommonButton btn12 = new CommonButton();
-		btn12.setName("绑定会员");
-		btn12.setType("click");
+		btn12.setName("扫码验证");
+		btn12.setType("scancode_push");
 		btn12.setKey("12");
 
-		ViewButton btn13 = new ViewButton();
-		btn13.setName("骑马预约");
-		btn13.setType("view");
-		btn13.setUrl(MyConfig.ipConfig + "member/order.jsp");
+		CommonButton btn13 = new CommonButton();
+		btn13.setName("马匹信息");
+		btn13.setType("click");
+		btn13.setKey("13");
 
 		CommonButton btn14 = new CommonButton();
-		btn14.setName("扫码验证");
+		btn14.setName("个人信息");
 		btn14.setType("click");
 		btn14.setKey("14");
-
-		CommonButton btn15 = new CommonButton();
-		btn15.setName("个人信息");
-		btn15.setType("click");
-		btn15.setKey("15");
 
 		CommonButton btn21 = new CommonButton();
 		btn21.setName("近期活动");
@@ -84,14 +80,9 @@ public class MenuManager {
 				"http://mp.weixin.qq.com/mp/getmasssendmsg?__biz=MjM5MjIzODEzNA==#wechat_webview_type=1&wechat_redirect");
 
 		CommonButton btn24 = new CommonButton();
-		btn24.setName("马匹信息");
+		btn24.setName("优惠办卡");
 		btn24.setType("click");
 		btn24.setKey("24");
-
-		CommonButton btn25 = new CommonButton();
-		btn25.setName("优惠办卡");
-		btn25.setType("click");
-		btn25.setKey("25");
 
 		CommonButton btn31 = new CommonButton();
 		btn31.setName("感悟投稿");
@@ -115,11 +106,11 @@ public class MenuManager {
 
 		ComplexButton mainBtn1 = new ComplexButton();
 		mainBtn1.setName("会员服务");
-		mainBtn1.setSub_button(new Button[] { btn11, btn12, btn13, btn14, btn15 });
+		mainBtn1.setSub_button(new Button[] { btn11, btn12, btn13, btn14 });
 
 		ComplexButton mainBtn2 = new ComplexButton();
 		mainBtn2.setName("精彩活动");
-		mainBtn2.setSub_button(new Button[] { btn21, btn22, btn23, btn24, btn25 });
+		mainBtn2.setSub_button(new Button[] { btn21, btn22, btn23, btn24 });
 
 		ComplexButton mainBtn3 = new ComplexButton();
 		mainBtn3.setName("联系大叔");
